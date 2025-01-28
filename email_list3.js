@@ -1,4 +1,7 @@
 const $ = selector => document.querySelector(selector);
+
+const userEntry =
+prompt("This is a test of the prompt method", 100);
  
 const joinList = evt => {
     // get user entries from text boxes
