@@ -2,6 +2,11 @@ const $ = selector => document.querySelector(selector);
 
 const userEntry =
 prompt("This is a test of the prompt method", 100);
+
+let entryA = prompt("Enter any value", 12345.6789);
+alert(entryA);
+entryA = parseInt(entryA);
+alert(entryA);
  
 const joinList = evt => {
     // get user entries from text boxes
