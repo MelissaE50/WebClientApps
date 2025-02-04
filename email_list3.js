@@ -55,6 +55,12 @@ const clearForm = () => {
     // set focus on first text box after resetting the form
     $("#email_1").focus();
 };
+let sum = 0;
+for (let i = 1; i <= 5; i++)
+{
+    sum += i;
+}
+alert(sum);
  
 document.addEventListener("DOMContentLoaded", () => {
     // hook up click events for both buttons
