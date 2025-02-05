@@ -1,12 +1,11 @@
 const $ = selector => document.querySelector(selector);
- 
 const joinList = evt => {
     // get user entries from text boxes
     const email1 = $("#email_1").value;
     const email2 = $("#email_2").value;
-    const firstName = $("#first_name").value;
- 
-    // check user entries
+    const firtName = $("#first_name")
+
+   // check user entries
     let isValid = true;
     if (email1 == "") { 
         $("#email_1_error").textContent = "Email is required.";
