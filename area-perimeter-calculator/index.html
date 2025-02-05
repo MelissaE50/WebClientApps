@@ -14,19 +14,22 @@ content="width=device-width, initial-scale=1">
     <script>
         "use strict";
  
-        // get miles driven from user
-        const miles = parseInt(prompt("Enter miles driven"));
+        // get length of rectangle from user
+        const length = parseInt(prompt("Enter length of rectangle"));
  
-        // get gallons used from user
-        const gallons =
-            parseInt(prompt("Enter gallons of gas used"));
+        // get width of rectangle from user
+        const width = parseInt(prompt("Enter width of rectangle"));
+
+        // calculate area
+        const area = parseFloat(length*width);
  
-        // calculate mpg
-        const mpg = parseFloat(miles/gallons);
+        // calculate perimeter
+        const perimeter = parseFloat(2*length)+(2*width);
  
-        const html = `<p><label>Miles: </label>${miles}</p>
-                      <p><label>Gallons: </label>${gallons}</p>
-                      <p><label>MPG: </label>${mpg.toFixed(2)}</p>`;
+        const html = `<p><label>Length: </label>${length}</p>
+                      <p><label>Width: </label>${width}</p>
+                      <p><label>Area: </label>${area.toFixed(2)}</p>
+                      <p><label>Perimeter: </label>${perimeter.toFixed(2)}</p>`;
         document.write(html);
     </script>    
 </body>
