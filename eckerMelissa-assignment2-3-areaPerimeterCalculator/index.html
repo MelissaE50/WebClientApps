@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+<title>The Area and Perimeter Calculator</title>
+<!-- link and style elements go here -->
+<link rel="stylesheet" href="apc.css">
+</head>
+
+<body>
+    <h1>The Area and Perimeter Calculator</h1>
+    <script>
+        "use strict";
+ 
+        // get length of rectangle from user
+        const length = parseInt(prompt("Enter length of rectangle"));
+ 
+        // get width of rectangle from user
+        const width = parseInt(prompt("Enter width of rectangle"));
+
+        // calculate area
+        const area = parseFloat(length*width);
+ 
+        // calculate perimeter
+        const perimeter = parseFloat(2*length)+(2*width);
+ 
+        const html = `<p><label>Length: </label>${length}</p>
+                      <p><label>Width: </label>${width}</p>
+                      <p><label>Area: </label>${area.toFixed(2)}</p>
+                      <p><label>Perimeter: </label>${perimeter.toFixed(2)}</p>`;
+        document.write(html);
+    </script>    
+</body>
+
+    </html>
+    
