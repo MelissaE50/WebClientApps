@@ -23,12 +23,10 @@ do {
 while(score != -1);
 //calculate and display average score
 const average = parseInt(total/count);
+document.write(`<p>Average score is ${average}</p>`);
 
 let highestScore = 0;
-for (let val of score) {  // val holds the current value
-  score > val;                
-}
-alert(score);                // displays 900.95
 
-document.write(`<p>Average score is ${average}</p>`);
+//for-of loop here
+//document.write(`<p>Highest score is ${highestScore}</p>`);
 
