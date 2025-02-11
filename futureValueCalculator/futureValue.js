@@ -10,7 +10,7 @@ do {
     rate =
         parseFloat(prompt("Enter interest rate as xx.x", 7.5));
 }
-while ( isNaN(rate) );
+while ( isNaN(rate) || rate <= 15 || rate > 0);
  
 let years = 0;
 do {
