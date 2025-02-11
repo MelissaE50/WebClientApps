@@ -1,3 +1,4 @@
+let again = "y";
 let investment = 0;
 do {
     investment = parseFloat(
@@ -9,8 +10,10 @@ let rate = 0;
 do {
     rate =
         parseFloat(prompt("Enter interest rate as xx.x", 7.5));
+       // if (rate < 0 || rate > 15);
+        //alert("Interest rate is invalid");
 }
-while ( isNaN(rate) );
+        while ( isNaN(rate) );
  
 let years = 0;
 do {
@@ -28,5 +31,9 @@ document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
 document.write(`<p><label>Years:</label> ${years}</p>`);
 document.write(`<p><label>Future Value:</label>
                 ${futureValue.toFixed(2)}</p>`);
+
+//again = prompt("Repeat entries? (y/n)", "y");
+            
+            //while (again =="y");
 
                
