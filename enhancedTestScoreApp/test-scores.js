@@ -13,7 +13,7 @@ do {
         scores[scores.length] = score;
     }
     else if (score != -1){
-        alert("Score must by a valid number from 0 through 100");
+        alert("Score must be a valid number from 0 through 100");
     }
 }
 while(score != -1);
