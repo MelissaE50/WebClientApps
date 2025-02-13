@@ -7,13 +7,13 @@ let highestScore = 0;
 let score = 0;
 do {
     score = parseInt(
-        prompt("Enter a test score, or enter -1 to end scores", -1));
+        prompt("Enter a test score, or enter -1 to end", -1));
 
     if (score >= 0 && score <= 100) {
         scores[scores.length] = score;
     }
     else if (score != -1){
-        alert("Score must be a valid number from 0 through 100");
+        alert("Score must be a valid number between 0 and 100");
     }
 }
 while(score != -1);
