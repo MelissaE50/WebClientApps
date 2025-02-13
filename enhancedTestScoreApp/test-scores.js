@@ -1,12 +1,14 @@
-// declare and initialize an array to hold test scores from user
+"use strict";
+
 const scores = [];
- 
-// use do-while loop to get scores from the user and store in array
+let highestScore = 0;
+
+// use do-while loop to prompt the user to enter test scores
 let score = 0;
 do {
-    score = parseInt(prompt(
-        "Enter a test score, or enter -1 to end scores", -1));
- 
+    score = parseInt(
+        prompt("Enter a test score, or enter -1 to end scores", -1));
+
     if (score >= 0 && score <= 100) {
         scores[scores.length] = score;
     }
@@ -17,23 +19,20 @@ do {
 while(score != -1);
 
 if (scores.length > 0) {
-    // use a for-in loop to add each score to total and display it
+    // use for-in loop to add each score to total, and display score
     let total = 0;
     for (let i in scores) {
         total = total + scores[i];
-        document.write(
-            `<p>Score ${parseInt(i) + 1}: ${scores[i]}</p>`);
+        if (scores[i] > highestScore) {
+            highestScore = scores[i];
+        }
+        document.write(`<p>Score ${parseInt(i) + 1}: ${scores[i]}</p>`);
     }
- 
-    //calculate and display the average
+
+    // calculate and display average score
     const average = parseInt(total/scores.length);
     document.write(`<p>Average score is ${average}</p>`);
+
+    
+    document.write(`<p>Highest score is ${highestScore}</p>`)
 }
-
-let highestScore = 0;
-for (let val of scores) {  // val holds the current value
-  highestScore = val;                
-}
-document.write(`<p>Highest score is ${highestScore}</p>`); //display highest score
-
-
