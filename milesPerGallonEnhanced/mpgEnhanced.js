@@ -1,20 +1,49 @@
-let again = "y";
- 
-do {
-    const miles = parseInt(prompt("Enter miles driven"));
-    const gallons = parseInt(prompt("Enter gallons of gas used"));
- 
-    if (miles > 0 && gallons > 0) {
-        const mpg = parseFloat(miles/gallons);
- 
-        const html = `<p>${miles} miles on ${gallons} 
-                      gallons = ${mpg.toFixed(2)} MPG</p>`;
-        document.write(html);
-    } 
-    else {
-        alert("One or both entries are invalid");
+"use strict";
+
+const $ = selector => document.querySelector(selector);
+
+const getNumericErrorMsg = lbl => `${lbl} must be a valid number.`;
+const getRangeErrorMsg = lbl => `${lbl} must be greater than zero.`;
+
+const focusAndSelect = selector => {
+    const elem = $(selector);
+    elem.focus();
+    elem.select();
+};
+
+const processEntries = () => {
+    const miles = parseFloat($("#miles").value);
+    const gallons = parseFloat($("#gallons").value);
+
+    if (isNaN(miles)) {
+        alert(getNumericErrorMsg("Miles driven"));
+        focusAndSelect("#miles");
+    } else if (miles <= 0) {
+        alert(getRangeErrorMsg("Miles driven"));
+        focusAndSelect("#miles");
     }
- 
-    again = prompt("Repeat entries? (y/n)", "y");
+    else if (isNaN(gallons)) {
+        alert(getNumericErrorMsg("Gallons of gas used"));
+        focusAndSelect("#gallons");
+    } else if (gallons <= 0) {
+        alert(getRangeErrorMsg("Gallons of gas used"));
+        focusAndSelect("#gallons");
+    }
+    else {
+        $("#mpg").value = (miles / gallons).toFixed(2);
+    }
+};
+
+const clearEntries = () => {
+    $("#miles").value = "";
+    $("#gallons").value = "";
+    $("#mpg").value = "";
+    $("#miles").focus();
 }
-while (again == "y");
+
+document.addEventListener("DOMContentLoaded", () => {
+    $("#calculate").addEventListener("click", processEntries);
+    $("#clear").addEventListener("click", clearEntries);
+    $("#miles").addEventListener("dblclick", clearEntries);
+    $("#miles").focus();
+});
