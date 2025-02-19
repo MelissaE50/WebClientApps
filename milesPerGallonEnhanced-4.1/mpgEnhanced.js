@@ -2,8 +2,8 @@
 
 const $ = selector => document.querySelector(selector);
 
-const getNumericErrorMsg = lbl => `${lbl} must be a valid number.`;
-const getRangeErrorMsg = lbl => `${lbl} must be greater than zero.`;
+const getNumericErrorMsg = lbl => `${lbl} must be a valid number.`; //error message if not a valid number
+const getRangeErrorMsg = lbl => `${lbl} must be greater than zero.`; //error message if number is zero or less
 
 const focusAndSelect = selector => {
     const elem = $(selector);
@@ -38,12 +38,12 @@ const clearEntries = () => {
     $("#miles").value = "";
     $("#gallons").value = "";
     $("#mpg").value = "";
-    $("#miles").focus();
+    $("#miles").focus(); //clears entries to start over
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     $("#calculate").addEventListener("click", processEntries);
     $("#clear").addEventListener("click", clearEntries);
     $("#miles").addEventListener("dblclick", clearEntries);
-    $("#miles").focus();
+    $("#miles").focus(); //causes clear button to work in all fields
 });
