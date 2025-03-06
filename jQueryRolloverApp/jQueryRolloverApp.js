@@ -1,4 +1,5 @@
 "use strict";
+
 $(document).ready(() => {
 
     // process each img tag
@@ -16,5 +17,5 @@ $(document).ready(() => {
             () => img.src = oldURL   // hover out
         ); 
     });
-    
+
 });
