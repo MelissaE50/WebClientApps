@@ -1,35 +1,25 @@
 "use strict";
+$(document).ready( () => {
 
-$(document).ready(function() {
-    $("#categories h2").click( evt => {
+    // set event handler for all h2 tags
+    $("#faqs h2").click( evt => {
+        // get clicked h2 tag
         const h2 = evt.currentTarget;
 
+        // toggle minus class for h2 tag
         $(h2).toggleClass("minus");
 
+        // show or hide related div
         if ($(h2).attr("class") !== "minus") {
             $(h2).next().hide();
         }
         else {
-            $(h2).next().show();
+           $(h2).next().show();
         }
 
-        $("#image").attr("src", "");
-    }); // end click
-
-    $("#web_images a, #language_images a, #database_images a").each( (index, img) => {
-        // get old and new urls
-        var imageURL = $(img).attr("href");
-
-        // preload images		
-        var bookImage = new Image();
-        bookImage.src = imageURL;
-
-        // set up event handlers			
-        $(img).click( evt => {
-            $("#image").attr("src", imageURL);
-
-        // cancel the default action of each link
         evt.preventDefault();
-        }); // end click 
-    }); // end each
-}); // end ready
+    });
+
+    // set focus on first h2 tag's <a> tag
+    $("#faqs").find("a:first").focus();
+});
