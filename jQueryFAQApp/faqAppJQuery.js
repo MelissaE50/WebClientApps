@@ -1,6 +1,8 @@
 "use strict";
 $(document).ready( () => {
 
+    //$("#startup_message").delay(5000).fadeOut(1000);
+
     $("#faqs h1").animate(
 		{ fontSize: "275%", opacity: 1, left: "+=175" }, 
 		2000,
