@@ -8,10 +8,10 @@ $(document).ready( () => {
     $(":radio").change( () => {
         const radioButton = $(":radio:checked").val();
         if (radioButton == "corporate") {
-            $("#company_name").attr("disabled", false);
+            $("#company_name").attr("disabled", false); //means enabled
             $("#company_name").next().text("*");
         } else {
-            $("#company_name").attr("disabled", true);
+            $("#company_name").attr("disabled", true); //means disabled
             $("#company_name").next().text("");
         }
     });
@@ -69,15 +69,20 @@ $(document).ready( () => {
             $("#company_name").val(companyName);                    
         }
                     
-        // validate the first name entry
+        // validate the first name entry 
+        const firstNamePattern = /\b[A-Za-z]\b/;
         const firstName = $("#first_name").val().trim();
         if (firstName == "") {
             $("#first_name").next().text("This field is required.");
+            isValid = false;
+        } else if ( !firstNamePattern.test(firstName) ) {
+            $("#first_name").next().text("Must be a valid first name.");
             isValid = false;
         } else {
             $("#first_name").next().text("");
         }
         $("#first_name").val(firstName);
+    }
                     
         // validate the last name entry
         const lastName = $("#last_name").val().trim();
