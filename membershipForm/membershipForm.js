@@ -70,7 +70,7 @@ $(document).ready( () => {
         }
                     
         // validate the first name entry 
-        const firstNamePattern = /\b[A-Za-z]\b/;
+        const firstNamePattern = /\b[A-Za-z]{1}\b/;
         const firstName = $("#first_name").val().trim();
         if (firstName == "") {
             $("#first_name").next().text("This field is required.");
@@ -82,7 +82,7 @@ $(document).ready( () => {
             $("#first_name").next().text("");
         }
         $("#first_name").val(firstName);
-    }
+    
                     
         // validate the last name entry
         const lastName = $("#last_name").val().trim();
@@ -115,3 +115,4 @@ $(document).ready( () => {
     });
 
 });
+
