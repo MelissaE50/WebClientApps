@@ -5,7 +5,7 @@ $(document).ready( () => {
     $("#join_list").click( evt => {
         let isValid = true;
 
-        // validate the first email address
+        // validate first email address
         const emailPattern = 
             /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b/;
         const email1 = $("#email_1").val().trim();
@@ -20,7 +20,7 @@ $(document).ready( () => {
         }
         $("#email_1").val(email1);
 
-        // validate the second email address
+        // validate second email address
         const email2 = $("#email_2").val().trim();
         if (email2 == "") { 
             $("#email_2").next().text("This field is required.");
@@ -33,7 +33,7 @@ $(document).ready( () => {
         }
         $("#email_2").val(email2);
         
-        // validate the first name entry  
+        // validate first name entry  
         const firstName = $("#first_name").val().trim();
         if (firstName == "") {
             $("#first_name").next().text("This field is required.");
@@ -43,7 +43,7 @@ $(document).ready( () => {
         }
         $("#first_name").val(firstName);
 
-        // validate the last name entry
+        // validate last name entry
         const lastName = $("#last_name").val().trim();
         if (lastName == "") {
             $("#last_name").next().text("This field is required.");
@@ -53,7 +53,7 @@ $(document).ready( () => {
         }
         $("#last_name").val(lastName);
 
-        // validate the state entry
+        // validate state entry
 		const state = $("#state").val().trim();
 		if (state == "") {
 			$("#state").next().text("This field is required.");
@@ -66,13 +66,13 @@ $(document).ready( () => {
 		}
 		$("#state").val(state);
 			
-		// validate the zip-code entry
+		// validate zip-code entry
 		const zipCode = $("#zip_code").val().trim();
 		if (zipCode == "") {
 			$("#zip_code").next().text("This field is required.");
 			isValid = false;
 		} else if (isNaN(zipCode)) {
-            $("#zip_code").next().text("Use 99999 format.");
+            $("#zip_code").next().text("Use numeric format.");
             isValid = false;
         } else if ( zipCode.length != 5 ) {
 			$("#zip_code").next().text("Use 5-digit code.");
@@ -82,7 +82,7 @@ $(document).ready( () => {
 		}
         $("#zip_code").val(zipCode);
         			
-        // validate the check boxes	
+        // validate check boxes	
         let checkedOptions = [];
         checkedOptions = $(":checkbox:checked");
         if (checkedOptions.length == 0) {
@@ -92,7 +92,7 @@ $(document).ready( () => {
             $("#net").next().text("");
         }
 						
-		// prevent the default action of submitting the form if any entries are invalid 
+		// prevent the default action from submitting the form if any entries are invalid 
 		if (isValid == false) {
 			evt.preventDefault();
 		}
@@ -113,6 +113,6 @@ $(document).ready( () => {
         $("#email_1").focus();
     });
 
-    // move focus to first text box
+    // make first text box the focus
     $("#email_1").focus();
 });
