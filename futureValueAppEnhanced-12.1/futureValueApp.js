@@ -50,7 +50,7 @@ const formatFutureValue = futureValue => {
 const getDate = futureValue => {
     const currentDate = new Date();
 
-    // get the date parts 
+    // assemble date 
     let month = currentDate.getMonth() + 1;
     if (month < 10) {
         month = "0" + month;
@@ -61,7 +61,7 @@ const getDate = futureValue => {
     }
     const year = currentDate.getFullYear();
     
-    // get the time parts
+    // assemble time
     const hours = currentDate.getHours();
     let minutes = currentDate.getMinutes();
     if (minutes < 10) {

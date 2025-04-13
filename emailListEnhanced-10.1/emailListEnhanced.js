@@ -43,7 +43,7 @@ $(document).ready( () => {
         }
         $("#first_name").val(firstName);
 
-        // validate last name entry
+        // validate the last name entry
         const lastName = $("#last_name").val().trim();
         if (lastName == "") {
             $("#last_name").next().text("This field is required.");
@@ -53,7 +53,7 @@ $(document).ready( () => {
         }
         $("#last_name").val(lastName);
 
-        // validate state entry
+        // validate the state entry
 		const state = $("#state").val().trim();
 		if (state == "") {
 			$("#state").next().text("This field is required.");
@@ -66,7 +66,7 @@ $(document).ready( () => {
 		}
 		$("#state").val(state);
 			
-		// validate zip-code entry
+		// validate the zip-code entry
 		const zipCode = $("#zip_code").val().trim();
 		if (zipCode == "") {
 			$("#zip_code").next().text("This field is required.");
@@ -82,7 +82,7 @@ $(document).ready( () => {
 		}
         $("#zip_code").val(zipCode);
         			
-        // validate check boxes	
+        // validate the check boxes	
         let checkedOptions = [];
         checkedOptions = $(":checkbox:checked");
         if (checkedOptions.length == 0) {
