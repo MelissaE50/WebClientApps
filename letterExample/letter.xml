@@ -2,7 +2,7 @@
 
 <!DOCTYPE letter SYSTEM "letter.dtd">
 
-<letter>\
+<letter>
     <contact type = "sender">
     <name>Jane Doe</name>
     <address1>Box 12345</address1>
